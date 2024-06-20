@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FAQ Section Example</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <img src="logo.png" alt="Logo" style="height: 40px;">
+        </div>
+        <button class="faq-button" onclick="scrollToFAQ()">FAQ</button>
+    </header>
+
+    <!-- FAQ Section -->
+    <section id="faq" class="faq-section">
+        <h2>Frequently Asked Questions</h2>
+        <div class="faq-item">
+            <h3>What is GEN AI?</h3>
+            <p>GEN AI stands for Generative Artificial Intelligence, which refers to AI systems capable of generating new content, such as text, images, and music, based on the data they have been trained on.</p>
+        </div>
+        <div class="faq-item">
+            <h3>Who is this course for?</h3>
+            <p>This course is designed for professionals and students who are interested in learning about Generative AI and its applications. It is suitable for both beginners and those with some experience in AI.</p>
+        </div>
+        <div class="faq-item">
+            <h3>What is the course duration?</h3>
+            <p>The course spans over a period of 8 weeks, with weekly live sessions and assignments to help reinforce learning.</p>
+        </div>
+        <div class="faq-item">
+            <h3>Will I receive a certificate upon completion?</h3>
+            <p>Yes, you will receive a certificate of completion after successfully finishing the course and all its requirements.</p>
+        </div>
+        <div class="faq-item">
+            <h3>What is the cost of the course?</h3>
+            <p>The course is priced at ₹25,000, with an early bird discount available for enrollments made before June 25th.</p>
+        </div>
+        <div class="faq-item">
+            <h3>How can I enroll in the course?</h3>
+            <p>You can enroll in the course by visiting our website and clicking on the 'Get access now' button, which will guide you through the registration process.</p>
+        </div>
+    </section>
+
+    <script>
+        function scrollToFAQ() {
+            document.getElementById('faq').scrollIntoView({ behavior: 'smooth' });
+        }
+        document.addEventListener('DOMContentLoaded', () => {
+            const faqItems = document.querySelectorAll('.faq-item h3');
+            faqItems.forEach(item => {
+                item.addEventListener('click', () => {
+                    const answer = item.nextElementSibling;
+                    if (answer.style.display === 'none' || !answer.style.display) {
+                        answer.style.display = 'block';
+                    } else {
+                        answer.style.display = 'none';
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>
